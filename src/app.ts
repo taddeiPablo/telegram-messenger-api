@@ -5,6 +5,7 @@ import swaggerJsdoc from 'swagger-jsdoc';
 import { swaggerOptions } from './lib/users/infrastructure/swagger';
 
 import { ExpressUserRouter } from './lib/users/infrastructure/Api/routers/ExpressUserRouter';
+import { ExpressMessageRouter } from './lib/messages/infrastructure/Api/routers/ExpressMessageRouters';
 import { ExceptionUserErrorNotFound } from './lib/users/domain/errors/ExceptionUserErrorNotFound';
 
 
@@ -14,6 +15,9 @@ app.use(express.json());
 
 //ROUTES for users
 app.use('/user', ExpressUserRouter);
+// ROUTES for messages
+app.use('/message', ExpressMessageRouter);
+
 
 app.use((err: unknown, _req: Request, _res: Response, _next: NextFunction) => {
     if (err instanceof ExceptionUserErrorNotFound) {
