@@ -20,9 +20,6 @@ export class ExpressUserController {
         try {
             const { email, password } = req.body as { email: string, password: string };
             const user = await ServiceContainer.user.login.run(email, password);
-            if (!user) {
-                throw new ExceptionUserErrorNotFound("Invalid email or password");
-            }
             res.status(200).json({ message: "Login successful", user });     
         } catch (error) {
             if (error instanceof ExceptionUserErrorNotFound) {

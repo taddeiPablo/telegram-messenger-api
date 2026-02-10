@@ -6,23 +6,32 @@ import { UserPassword } from "../values-objects/UserPassword";
 
 // User.ts
 export class User {
-    id: UserId;
+    private _id: UserId;
     name: UserName;
     email: UserEmail;
     password: UserPassword;
 
-    public getId(): UserId {
-        return this.id;
+    get id(): UserId {
+        return this._id;
     }
 
-    public setId(id: UserId): void {
-        this.id = id;
+    set id(id: UserId) {
+        this._id = id;
     }
 
     constructor(name: UserName, email: UserEmail, password: UserPassword) {
-        this.id = new UserId("");
+        this._id = new UserId(this.generateRandomId());
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    private generateRandomId(): string {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        for (let i = 0; i < 12; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
     }
 }
