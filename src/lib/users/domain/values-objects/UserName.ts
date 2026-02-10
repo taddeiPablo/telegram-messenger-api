@@ -3,9 +3,10 @@ export class UserName {
 
     constructor(value: string) {
         this.value = value;
+        this.ensureValidName();
     }
 
-    public ensureValidName(){
+    private ensureValidName(){
         if (!this.value || this.value.trim() === '') {
             throw new Error('User name cannot be empty');
         }

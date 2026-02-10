@@ -15,7 +15,6 @@ export class InMemoryDataBase implements UserRepository {
             const userPassStr = String(u.password.value).trim();
             return emailStr === email && userPassStr === password;
         });
-
         if (!user) {
             throw new Error("User not found");
         }

@@ -3,6 +3,7 @@ export class UserEmail {
 
     constructor(value: string) {
         this.value = value;
+        this.ensureSameEmail();
     }
 
     private validateEmail(email: string): boolean {
@@ -10,7 +11,7 @@ export class UserEmail {
         return emailRegex.test(email);
     }
 
-    public ensureSameEmail(): void {
+    private ensureSameEmail(): void {
         if (!this.validateEmail(this.value)) {
             throw new Error('Invalid email format');
         }

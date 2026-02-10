@@ -4,9 +4,10 @@ export class UserPassword {
 
     constructor(value: string) {
         this.value = value;
+        this.ensureIsValid();
     }
 
-    public ensureIsValid(): void {
+    private ensureIsValid(): void {
         if (this.value.length < 6) {
             throw new Error("Password must be at least 6 characters long");
         }
