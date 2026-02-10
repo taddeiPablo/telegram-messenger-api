@@ -11,7 +11,7 @@ export class User {
     email: UserEmail;
     password: UserPassword;
 
-    get id(): UserId {
+    get get_id(): UserId {
         return this._id;
     }
 

@@ -1,7 +1,6 @@
 import { User } from "../../domain/entities/User";
 import { UserRepository } from "../../domain/interfaces/UserRepository";
 import { UserEmail } from "../../domain/values-objects/UserEmail";
-import { UserId } from "../../domain/values-objects/UserId";
 import { UserName } from "../../domain/values-objects/UserName";
 import { UserPassword } from "../../domain/values-objects/UserPassword";
 

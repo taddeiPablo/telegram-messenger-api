@@ -4,7 +4,7 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 import { swaggerOptions } from './lib/users/infrastructure/swagger';
 
-import { ExpressUserRouter } from './lib/users/infrastructure/routers/ExpressUserRouter';
+import { ExpressUserRouter } from './lib/users/infrastructure/Api/routers/ExpressUserRouter';
 import { ExceptionUserErrorNotFound } from './lib/users/domain/errors/ExceptionUserErrorNotFound';
 
 

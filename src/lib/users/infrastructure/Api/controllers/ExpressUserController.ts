@@ -1,7 +1,7 @@
 
 import { Request, Response, NextFunction } from 'express';
 import { ServiceContainer } from 'src/lib/shared/ServiceContainer';
-import { ExceptionUserErrorNotFound } from '../../domain/errors/ExceptionUserErrorNotFound';
+import { ExceptionUserErrorNotFound } from '../../../../users/domain/errors/ExceptionUserErrorNotFound';
 
 export class ExpressUserController {
     async register(req: Request, res: Response, next: NextFunction): Promise<void> {
