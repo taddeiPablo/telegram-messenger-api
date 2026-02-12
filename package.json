@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "tsx src/app.ts",
     "build": "tsc",
-    "start": "node dist/app.ts"
+    "start": "node dist/app.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "repository": {
     "type": "git",
