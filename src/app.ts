@@ -36,7 +36,8 @@ app.use((err: unknown, _req: Request, _res: Response, _next: NextFunction) => {
 
 // Servir la documentación en la ruta /api-docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
-    console.log('Docs available on http://localhost:3000/api-docs');
+const port = parseInt(process.env.PORT || '3000', 10);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server is running on port ${port}`);
+    console.log(`Docs available on http://localhost:${port}/api-docs`);
 });

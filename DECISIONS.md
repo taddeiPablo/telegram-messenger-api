@@ -16,7 +16,7 @@
 
 ### 🔹 Decisión
 
-Implementé un `InMemoryMessageRepository` e `InMemoryDataBase` en lugar de utilizar una base de datos tradicional como MongoDB, SQL Server o PostgreSQL.
+Implementé un `InMemoryMessageRepository(Message)` e `InMemoryDataBase(User)` en lugar de utilizar una base de datos tradicional como MongoDB, SQL Server o PostgreSQL.
 
 ### 🎯 Razón de la Decisión
 

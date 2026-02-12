@@ -8,6 +8,9 @@
     "build": "tsc",
     "start": "node dist/app.ts"
   },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/taddeiPablo/telegram-messenger-api.git"
