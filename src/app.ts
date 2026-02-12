@@ -15,7 +15,7 @@ app.use(express.json());
 //ROUTES for users
 app.use('/users', ExpressUserRouter);
 //ROUTES for messages
-app.use('/message', ExpressMessageRouter);
+app.use('/messages', ExpressMessageRouter);
 
 //Manejo de errores
 app.use((err: unknown, _req: Request, _res: Response, _next: NextFunction) => {
