@@ -1,6 +1,6 @@
 
 import { Request, Response, NextFunction } from 'express';
-import { ServiceContainer } from 'src/lib/shared/ServiceContainer';
+import { ServiceContainer } from '../../../../shared/ServiceContainer';
 import { ExceptionUserErrorNotFound } from '../../../../users/domain/errors/ExceptionUserErrorNotFound';
 
 export class ExpressUserController {
