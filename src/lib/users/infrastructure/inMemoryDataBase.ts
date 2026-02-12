@@ -6,7 +6,17 @@ export class InMemoryDataBase implements UserRepository {
     private users: User[] = [];
 
     async register(user: User): Promise<User> {
-        this.users.push(user);
+        try{
+            if (this.userExist(user.email.value)) {
+                throw new ExceptionUserErrorNotFound("Este Email ya está registrado");
+            }
+            this.users.push(user);
+        }catch(error){
+            if (error instanceof ExceptionUserErrorNotFound) {
+                throw error;
+            }
+            throw new Error("Unexpected Error");
+        }
         return user;    
     }
 
@@ -18,7 +28,7 @@ export class InMemoryDataBase implements UserRepository {
                 return emailStr === email && userPassStr === password;
             });
             if (!user) {
-                throw new ExceptionUserErrorNotFound("Invalid email or password");
+                throw new ExceptionUserErrorNotFound("Email o Password incorrectos");
             }
             return user;
         } catch (error) {
@@ -28,4 +38,9 @@ export class InMemoryDataBase implements UserRepository {
             throw new Error("Unexpected Error");
         }
     }
+
+    private userExist(email: string): boolean {
+        return this.users.some(u => String(u.email.value).trim().toLowerCase() === email);
+    }
+
 }
