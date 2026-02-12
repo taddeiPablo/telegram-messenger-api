@@ -13,7 +13,7 @@ const swaggerSpecs = swaggerJsdoc(swaggerOptions);
 app.use(express.json());
 
 //ROUTES for users
-app.use('/user', ExpressUserRouter);
+app.use('/users', ExpressUserRouter);
 //ROUTES for messages
 app.use('/message', ExpressMessageRouter);
 
