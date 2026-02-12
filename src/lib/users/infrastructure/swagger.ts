@@ -8,6 +8,15 @@ export const swaggerOptions: Options = {
       version: '1.0.0',
       description: 'Documentación de la API de Telegram Messenger',
     },
+    components: {
+      securitySchemes: {
+          bearerAuth: {
+            type: 'http',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+          },
+        },
+    },
     servers: [
       {
         url: 'http://localhost:3000',

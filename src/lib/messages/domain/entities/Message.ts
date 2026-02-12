@@ -2,11 +2,11 @@
 export class Message{
     public id: string;
     public content: string;
-    public senderId: string;   // ID de tu usuario interno o "system"
-    public receiverId: string; // Chat ID de Telegram
-    public direction: 'INBOUND' | 'OUTBOUND'; // ¿Viene o va?
+    public senderId: string;
+    public receiverId: string;
+    public direction: 'INBOUND' | 'OUTBOUND';
     public createdAt: Date;
-    public telegramChatId?: string; // Opcional, para facilitar búsquedas por chat
+    public telegramChatId?: string;
 
     constructor(
         id: string,

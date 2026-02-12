@@ -9,6 +9,7 @@ const ExpressUserRouter = Router();
  * /users/register:
  *   post:
  *     summary: Registrar un nuevo usuario al sistema
+ *     tags: [Users]
  *     requestBody:
  *       required: true
  *       content:
@@ -34,11 +35,7 @@ const ExpressUserRouter = Router();
  *             schema:
  *               type: object
  *               properties:
- *                 id:
- *                   type: string
- *                 email:
- *                   type: string
- *                 name:
+ *                 message:
  *                   type: string
  */
 ExpressUserRouter.post('/register', controller.register);
@@ -47,6 +44,7 @@ ExpressUserRouter.post('/register', controller.register);
  * /users/login:
  *   post:
  *     summary: Login de un usuario en el sistema
+ *     tags: [Users]
  *     requestBody:
  *       required: true
  *       content:

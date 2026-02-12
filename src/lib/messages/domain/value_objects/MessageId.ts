@@ -8,7 +8,7 @@ export class MessageId {
 
     private validateEmpty(value: string): void {
         if (!value || typeof value !== 'string' || value.trim() === '') {
-            throw new Error('MessageId must be a non-empty string');
+            throw new Error('MessageId debe ser una cadena no vacía');
         }
     }
 }

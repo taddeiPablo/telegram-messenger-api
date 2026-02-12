@@ -19,19 +19,18 @@ export class User {
         this._id = id;
     }
 
-    constructor(name: UserName, email: UserEmail, password: UserPassword) {
-        this._id = new UserId(this.generateRandomId());
+    constructor(id: UserId, name: UserName, email: UserEmail, password: UserPassword) {
+        this._id = id;
         this.name = name;
         this.email = email;
         this.password = password;
     }
 
-    private generateRandomId(): string {
-        let result = '';
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-        for (let i = 0; i < 12; i++) {
-            result += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-        return result;
+    public toPrimitives() {
+        return {
+            id: this._id.value,
+            name: this.name.value,
+            email: this.email.value
+        };
     }
 }

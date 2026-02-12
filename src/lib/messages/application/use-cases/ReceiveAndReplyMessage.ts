@@ -17,11 +17,13 @@ export class ReceiveAndReplyMessage {
     }
 
     async run(chatId: string, textReceived: string) {
+        // Generamos un ID único para el mensaje
+        const InMessageId = crypto.randomUUID();
         // 1. Guardamos el mensaje recibido (IN)
         const inboundMsg = new Message(
-            '0',
-            Date.now().toString(), 
-            textReceived, 
+            InMessageId, 
+            textReceived,
+            Date.now().toString(),
             chatId, 
             'INBOUND', 
             new Date(),
@@ -31,11 +33,13 @@ export class ReceiveAndReplyMessage {
         // 2. Enviamos la respuesta automática (OUT)
         await this.messageSender.sendMessage(chatId, ReceiveAndReplyMessage.autoReplyContent);
 
+        // Generamos un ID único para el mensaje
+        const OutMessageId = crypto.randomUUID();
         // 3. Guardamos la respuesta enviada (OUT)
         const outboundMsg = new Message(
-            '0',
+            OutMessageId, 
+            ReceiveAndReplyMessage.autoReplyContent,
             (Date.now() + 1).toString(), 
-            ReceiveAndReplyMessage.autoReplyContent, 
             chatId, 
             'OUTBOUND', 
             new Date()

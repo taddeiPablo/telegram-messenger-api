@@ -8,7 +8,7 @@ export class MessageContent {
     
     private validateContent(content: string): void {
         if (!content || content.trim() === '') {
-            throw new Error('Message content cannot be empty');
+            throw new Error('El contenido del mensaje no puede estar vacío');
         }
     }
 }
